@@ -1,11 +1,14 @@
 // indiv option
 
 import React from "react"
+import {Router, Route, Link, Switch, NavLink } from "react-router-dom"
 
 const Option = (props) => {
   return (
     <div>
-      {props.optionText}
+      <Link to="/options/create">
+        {props.optionText}
+      </Link>
     </div>
   )
 }

@@ -2,7 +2,22 @@ import React from "react"
 
 export default class AddOption extends React.Component {
   state = {
-    error: ""
+    error: "",
+    options: []
+  }
+
+  handleAddOption = (option) => {
+    if(!option) {
+      return "bad option"
+    } else if(this.state.options.indexOf(option) > -1) {
+      return "exists!"
+    } else {
+      this.setState((prevState) => {
+        return {
+          options: prevState.options.concat(option)
+        }
+      })
+    }
   }
 
   handleFormSubmit = (e) => {
